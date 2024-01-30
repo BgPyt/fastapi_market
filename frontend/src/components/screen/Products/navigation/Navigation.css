@@ -1,0 +1,41 @@
+.navigation-block {
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(to right, #1fa2ff, #12d8fa, #a6ffcb);
+}
+
+.navigation-list {
+    display: inline-flex;
+    margin: 0;
+}
+
+.main-page {
+    list-style-type: none;
+}
+.main-page a {
+    color: #ffffff;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: clamp(1.1rem, 0.7153rem + 1.6368vw, 1.3rem)
+}
+
+.navigation-list > li:last-child a {
+    color: #ffffffbb;
+    cursor: auto;
+    pointer-events: none;
+}
+
+.navigation-list > li::after {
+    content: "→";
+    padding-left: 5px;
+    padding-right: 5px;
+    color: #ffffff
+}
+
+.navigation-list > li:last-child::after {
+    display: none;
+}
+
+.navigation-list > li a:hover {
+    color: #0099f5;
+    transition: 0.25s;
+}

@@ -1,0 +1,39 @@
+.banner_block {
+    margin-top: 20px;
+}
+
+.wrapper {
+    padding-right: 24px;
+    align-items: center;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 24px;
+    position: relative;
+    max-width: 1330px;
+    display: flex;
+}
+
+.content {
+    height: 531px;
+    z-index: 0;
+    display: flex;
+    width: 100%;
+}
+
+
+.cersanit_banner {
+    max-height: 100%;
+    max-width: 100%;
+    display: flex;
+}
+
+.cersanit_banner img {
+    width: 100%;
+}
+
+.center_banners {
+    margin-left: 30px;
+    flex-direction: column;
+    display: flex;
+}

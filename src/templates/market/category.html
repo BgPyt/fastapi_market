@@ -1,0 +1,104 @@
+{% extends 'headers.html' %}
+{% block title %} {{ navigation['category'].name }} в Кемерово - продажа в розницу и оптом по выгодным ценам в регионе. Сантехресурс - крупнейший интернет-магазин сантехники, плитки, строительных материалов и товаров для водоснабжения и отопления. Наш телефон 8-800-745-8882. {% endblock %}
+{% block link %}
+<link rel="stylesheet" href="{{ url_for('storage', path='css/category.css') }}">
+{% endblock %}
+{% block section %}
+<div class="loader-not_active">
+    <svg class="" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="50" height="50" x="0" y="0" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><path d="M116.364 221.091H23.273C10.42 221.091 0 231.511 0 244.364s10.42 23.273 23.273 23.273h93.091c12.853 0 23.273-10.42 23.273-23.273-.001-12.853-10.421-23.273-23.273-23.273z" style="" fill="#2d50a7" data-original="#2d50a7" class=""></path><path d="M488.727 221.091h-93.091c-12.853 0-23.273 10.42-23.273 23.273s10.42 23.273 23.273 23.273h93.091c12.853 0 23.273-10.42 23.273-23.273s-10.42-23.273-23.273-23.273z" style="" fill="#73a1fb" data-original="#73a1fb" class=""></path><path d="M140.805 326.645 74.98 392.471c-9.089 9.089-9.089 23.823 0 32.912 4.544 4.544 10.501 6.816 16.457 6.816s11.913-2.273 16.455-6.816l65.825-65.826c9.089-9.089 9.089-23.824 0-32.912s-23.825-9.089-32.912 0z" style="" fill="#355ec9" data-original="#355ec9"></path><path d="M256 11.636c-12.853 0-23.273 10.42-23.273 23.273v46.545c0 12.853 10.42 23.273 23.273 23.273s23.273-10.42 23.273-23.273V34.909c0-12.853-10.42-23.273-23.273-23.273zM404.105 63.344 338.28 129.17c-9.089 9.089-9.089 23.824 0 32.912 4.544 4.544 10.501 6.817 16.457 6.817s11.913-2.273 16.455-6.817l65.825-65.826c9.089-9.089 9.089-23.824 0-32.912-9.087-9.089-23.825-9.089-32.912 0z" style="" fill="#c4d9fd" data-original="#c4d9fd" class=""></path><path d="M256 360.727c-12.853 0-23.273 10.42-23.273 23.273v93.091c0 12.853 10.42 23.273 23.273 23.273s23.273-10.42 23.273-23.273V384c0-12.853-10.42-23.273-23.273-23.273z" style="" fill="#3d6deb" data-original="#3d6deb"></path><path d="M371.192 326.645c-9.086-9.089-23.824-9.089-32.912 0-9.089 9.087-9.089 23.824 0 32.912l65.825 65.826a23.202 23.202 0 0 0 16.457 6.816 23.2 23.2 0 0 0 16.455-6.816c9.089-9.089 9.089-23.824 0-32.912l-65.825-65.826z" style="" fill="#5286fa" data-original="#5286fa"></path></g></svg>
+</div>
+<div class="content">
+    <div class="preloader">
+        <div class="loader"></div>
+    </div>
+    <div class="content-block-navigation">
+        <div class="wraper">
+            <div class="navigation-block">
+                <div class="navigation-path">
+                    <ul class="navigation-list">
+                        <li name="main-page"><a href="/"><span>Главная</span></a></li>
+                        <li><a href="/catalog"><span>Каталог</span></a></li>
+                        {% for name in navigation %}
+                        <li><a href="/catalog/{{navigation[name].slug}}"><span>{{ navigation[name].name }}</span></a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="navigation-name">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="catalog-content-block">
+        <div class="wraper">
+            <div class="product-missing-products-block">
+                <div class="product-missing-svg">
+                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="250" height="250" x="0" y="0" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><circle cx="256" cy="256" r="256" fill="#415eb3" opacity="1" data-original="#415eb3" class=""></circle><path fill="#fffffe" d="M264.9 344.3h-17.8c-65.8 0-120-51.5-123.4-117.1-.1-2.5.8-5.1 2.5-6.9s4.2-2.9 6.8-2.9h246c2.5 0 5.1 1.1 6.8 2.9 1.8 1.9 2.7 4.4 2.5 6.9-3.4 65.7-57.6 117.1-123.4 117.1zM133 224.1c-.8 0-1.4.3-2 .8-.5.5-.8 1.2-.8 2 3.2 62.1 54.5 110.8 116.7 110.8h17.9c62.3 0 113.5-48.7 116.7-110.8.1-.8-.2-1.4-.8-2-.5-.5-1.2-.8-2-.8z" opacity="1" data-original="#fffffe" class=""></path><path fill="#fffffe" d="M285.6 365.8h-59.3c-6.3 0-11.3-5.1-11.3-11.3v-16.9c0-1.8 1.5-3.3 3.3-3.3s3.3 1.5 3.3 3.3v16.9c0 2.6 2.1 4.6 4.6 4.6h59.3c2.6 0 4.6-2.1 4.6-4.6v-16.9c0-1.8 1.5-3.3 3.3-3.3s3.3 1.5 3.3 3.3v16.9c.3 6.2-4.8 11.3-11.1 11.3z" opacity="1" data-original="#fffffe" class=""></path><path fill="#fffffe" d="M256 402.8c-7.8 0-14.1-6.3-14.1-14.1v-26.2c0-1.8 1.5-3.3 3.3-3.3s3.3 1.5 3.3 3.3v26.2c0 4.1 3.3 7.4 7.4 7.4s7.4-3.3 7.4-7.4v-26.2c0-1.8 1.5-3.3 3.3-3.3s3.3 1.5 3.3 3.3v26.2c.2 7.7-6.1 14.1-13.9 14.1zM382.6 248.6H129.4c-1.8 0-3.3-1.5-3.3-3.3s1.5-3.3 3.3-3.3h253.3c1.8 0 3.3 1.5 3.3 3.3s-1.5 3.3-3.4 3.3zM265.2 224.1c-1.8 0-3.3-1.5-3.3-3.3v-74.7c0-10 8.1-18.1 18.1-18.1 8.7 0 16.2 6.3 17.7 14.7h12.2c-1.7-15.2-14.5-26.8-30-26.8-16.7 0-30.2 13.5-30.2 30.2v74.7c0 1.8-1.5 3.3-3.3 3.3s-3.3-1.5-3.3-3.3V146c0-20.3 16.5-36.8 36.8-36.8 19.7 0 35.8 15.4 36.8 35.1.1 1.3-.3 2.6-1.2 3.5-.9 1-2.2 1.6-3.5 1.6h-16c-2.5 0-4.6-1.9-4.8-4.4-.5-5.8-5.5-10.3-11.3-10.3-6.3 0-11.4 5.1-11.4 11.4v74.7c.1 1.8-1.4 3.3-3.3 3.3z" opacity="1" data-original="#fffffe" class=""></path><path fill="#fffffe" d="M280.1 199.1h-14.8c-1.8 0-3.3-1.5-3.3-3.3s1.5-3.3 3.3-3.3h14.8c1.8 0 3.3 1.5 3.3 3.3s-1.5 3.3-3.3 3.3z" opacity="1" data-original="#fffffe" class=""></path><path fill="#fffffe" d="M280.1 206.6c-1.8 0-3.3-1.5-3.3-3.3v-14.8c0-1.8 1.5-3.3 3.3-3.3s3.3 1.5 3.3 3.3v14.8c0 1.8-1.5 3.3-3.3 3.3zM246.4 199.1h-14.8c-1.8 0-3.3-1.5-3.3-3.3s1.5-3.3 3.3-3.3h14.8c1.8 0 3.3 1.5 3.3 3.3s-1.4 3.3-3.3 3.3z" opacity="1" data-original="#fffffe" class=""></path><path fill="#fffffe" d="M231.6 206.6c-1.8 0-3.3-1.5-3.3-3.3v-14.8c0-1.8 1.5-3.3 3.3-3.3s3.3 1.5 3.3 3.3v14.8c.1 1.8-1.4 3.3-3.3 3.3zM304.1 185.9c-4 0-7.5-2-9.4-5.5-2-3.4-2-7.5 0-11l6.6-11.4c.6-1 1.7-1.7 2.9-1.7s2.3.6 2.9 1.7l6.6 11.4c2 3.4 2 7.5 0 10.9-2.1 3.5-5.7 5.6-9.6 5.6zm0-19.5-3.6 6.3c-.8 1.4-.8 2.9 0 4.3s2.1 2.1 3.7 2.1c1.5 0 2.9-.8 3.7-2.1.3-.6 1.1-2.3 0-4.3zM198 224.1c-1.8 0-3.3-1.5-3.3-3.3v-13.2h-30.9v13.2c0 1.8-1.5 3.3-3.3 3.3s-3.3-1.5-3.3-3.3v-14.1c0-3.2 2.6-5.8 5.8-5.8h32.6c3.2 0 5.8 2.6 5.8 5.8v14.1c0 1.7-1.5 3.3-3.4 3.3zM351.4 224.1c-1.8 0-3.3-1.5-3.3-3.3v-13.2h-30.9v13.2c0 1.8-1.5 3.3-3.3 3.3s-3.3-1.5-3.3-3.3v-14.1c0-3.2 2.6-5.8 5.8-5.8H349c3.2 0 5.8 2.6 5.8 5.8v14.1c-.2 1.7-1.6 3.3-3.4 3.3z" opacity="1" data-original="#fffffe" class=""></path></g></svg>
+                </div>
+                <div class="product-missing-desctiption">
+                    <span>Товар ещё не добавлен, попробуйте зайти позже</span>
+                </div>
+            </div>
+            <div class="catalog-block">
+                <div class="catalog-block-left">
+                    <div class="category-list">
+                        <div>Категории</div>
+                        <ul>
+                            {% for name in subcategory %}
+                            <li><a href="/catalog/{{ name.slug }}">{{ name }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+                <div class="catalog-block-right">
+                    <div class="catalog-controls-group">
+                        <form id="filter" class="filter" method="get" action=""></form>
+                        <div class="group-sorted-select">
+                            <select class="sorted-select" name="sorted-select" form="filter">
+                                <option disabled>По популярности</option>
+                                <option value="sort_desc">По популярности</option>
+                                <option value="name_asc">От А до Я</option>
+                                <option value="name_desc">От Я до А</option>
+                                <option value="price_desc">Сначала дорогие</option>
+                                <option value="price_asc">Сначала дешевые</option>
+                            </select>
+                        </div>
+                        <div class="group-sorted-radio_stock">
+                            <span>В наличии:</span>
+                            <input form="filter" type="checkbox" id="switch" name='switch'>
+                            <label for="switch"></label>
+                        </div>
+                        <div class="group-counter-product">
+                            <span id="product-quantity">0</span>
+                        </div>
+                        <div class="group-display_sheme">
+                            <div class="display_sheme-table_view" title="Плитка">
+                                <input form="filter" class="display_sheme-input" type="radio" name="set_view" value="table">
+                                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" width="50" height="40" x="0" y="0" viewBox="0 0 32 32" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><path fill="#000000" d="M3 6v20h26V6zm2 2h4v4H5zm6 0h4v4h-4zm6 0h4v4h-4zm6 0h4v4h-4zM5 14h4v4H5zm6 0h4v4h-4zm6 0h4v4h-4zm6 0h4v4h-4zM5 20h4v4H5zm6 0h4v4h-4zm6 0h4v4h-4zm6 0h4v4h-4z" data-original="#000000" class=""></path></g></svg>
+                            </div>
+                            <div class="display_sheme-list_view" title="Таблица">
+                                <input form="filter" class="display_sheme-input" type="radio" name="set_view" value="list">
+                                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" width="50" height="40" x="0" y="0" viewBox="0 0 32 32" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><g data-name="16"><path d="M7 10h18a1 1 0 0 0 0-2H7a1 1 0 0 0 0 2zM25 15H7a1 1 0 0 0 0 2h18a1 1 0 0 0 0-2zM25 22H7a1 1 0 0 0 0 2h18a1 1 0 0 0 0-2z" fill="#000000" data-original="#000000" class=""></path></g></g></svg>
+                            </div>
+                        </div>          
+                    </div>
+                    <div class="catalog-show-product-block">
+                    </div>
+                    <div class="pagination-block">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+{% block script %}
+<script src="{{ url_for('storage', path='js/components/select.js') }}" type="module"></script>
+<script src="{{ url_for('storage', path='js/components/add-favourites_or_basket.js') }}" type="module"></script>
+<script src="{{ url_for('storage', path='js/components/editBasket.js') }}" type="module"></script>
+{% endblock %}
+
+
+
+2

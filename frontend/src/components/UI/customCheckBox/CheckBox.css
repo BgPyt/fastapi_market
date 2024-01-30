@@ -1,0 +1,45 @@
+input[id="switch"] {
+    width: 0;
+    height: 0;
+    position: absolute;
+    visibility: hidden;
+}
+
+label[for="switch"] {
+    width: 60px;
+    height: 30px;
+    background: #016fe1;
+    display: block;
+    border-radius: 100px;
+    position: relative;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: color 0.2s;
+}
+
+label[for="switch"]::after {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    border-radius: 90px;
+    transition: 0.4s;
+    content: '';
+}
+
+input[id="switch"]:checked + label {
+    background: rgb(128, 128, 128);
+}
+
+input[id="switch"]:checked + label:after {
+    right: calc(100% - 5px);
+    transform: translateX(100%);
+}
+
+.checkbox_name {
+    font-size: 18px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 1000;
+}

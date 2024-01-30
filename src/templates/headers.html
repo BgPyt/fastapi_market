@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Content-Type" content="application/json; charset=UTF-8" />
+    <link rel="stylesheet" href="{{ url_for('storage', path='css/headers.css') }}">
+    <link rel="stylesheet" href="{{ url_for('storage', path='css/headers_mob.css') }}">
+    <script src="{{ url_for('storage', path='js/jquery-3.7.1.min.js') }}"></script>
+    {% block link %}{% endblock %}
+    <title>{% block title %} {% endblock %}</title>
+</head>
+<body>
+    <header>
+        <div class="header-main_mob">
+            <div class="header-top_mob">
+                <div class="top-menu-retractable_mob">
+                    <svg style="cursor: pointer;" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" width="60" height="60" x="0" y="0" viewBox="0 0 28 28" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><switch><g><g fill="#6aafe6"><path d="M22.5 25h-5c-1.4 0-2.5-1.1-2.5-2.5v-5c0-1.4 1.1-2.5 2.5-2.5h5c1.4 0 2.5 1.1 2.5 2.5v5c0 1.4-1.1 2.5-2.5 2.5zm-5-8c-.3 0-.5.2-.5.5v5c0 .3.2.5.5.5h5c.3 0 .5-.2.5-.5v-5c0-.3-.2-.5-.5-.5zM10.5 25h-5C4.1 25 3 23.9 3 22.5v-5C3 16.1 4.1 15 5.5 15h5c1.4 0 2.5 1.1 2.5 2.5v5c0 1.4-1.1 2.5-2.5 2.5zm-5-8c-.3 0-.5.2-.5.5v5c0 .3.2.5.5.5h5c.3 0 .5-.2.5-.5v-5c0-.3-.2-.5-.5-.5zM22.5 13h-5c-1.4 0-2.5-1.1-2.5-2.5v-5C15 4.1 16.1 3 17.5 3h5C23.9 3 25 4.1 25 5.5v5c0 1.4-1.1 2.5-2.5 2.5zm-5-8c-.3 0-.5.2-.5.5v5c0 .3.2.5.5.5h5c.3 0 .5-.2.5-.5v-5c0-.3-.2-.5-.5-.5z" fill="#6aafe6" data-original="#6aafe6" class=""></path></g><path fill="#1e4777" d="M10.5 13h-5C4.1 13 3 11.9 3 10.5v-5C3 4.1 4.1 3 5.5 3h5C11.9 3 13 4.1 13 5.5v5c0 1.4-1.1 2.5-2.5 2.5zm-5-8c-.3 0-.5.2-.5.5v5c0 .3.2.5.5.5h5c.3 0 .5-.2.5-.5v-5c0-.3-.2-.5-.5-.5z" data-original="#1e4777" class=""></path></g></switch></g></svg>
+                </div>
+                <div class="header-img-company_mob">
+                    <a>
+                        <img class="img-company_mob" src="{{ url_for('storage', path='/logoza.ru.png') }}">
+                    </a>
+                </div>
+                <div class="top-menu-basket_mob">
+                    <div class="basket-counter_mob"><span id="favourites-number-mob">0</span></div>
+                    <a style="display: block; cursor: pointer;">
+                        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" width="50" height="50" x="0" y="0" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><g data-name="Layer 2"><circle cx="256" cy="256" r="256" fill="#00a1f5" data-original="#00a1f5" class=""></circle><path fill="#ffffff" d="M408.81 203.64a15.3 15.3 0 0 0-12.11-5.94h-79.77l-47.06-79.61a15.33 15.33 0 0 0-13.09-7.51h-.09a15.3 15.3 0 0 0-13.08 7.36l-48.42 79.76H115.3a15.3 15.3 0 0 0-15 18.36l35.26 172.85a15.3 15.3 0 0 0 15 12.24h201.2a15.32 15.32 0 0 0 14.81-11.46l44.94-172.84a15.34 15.34 0 0 0-2.7-13.21zm-152.29-48 24.85 42H231zm-15.36 179.13a15.31 15.31 0 1 1-30.61 0v-72.21a15.31 15.31 0 1 1 30.61 0zm60.29 0a15.31 15.31 0 1 1-30.61 0v-72.21a15.31 15.31 0 1 1 30.61 0z" data-original="#ffffff" class=""></path></g></g></svg>
+                    </a>
+                </div>
+            </div>
+            <div class="header-bottom_mob">
+                <form class="search-form_mob" method="get" action="/search/">
+                    <input class="search-input_mob" name="query" type="text", placeholder="Поиск по товарам">
+                </form>
+            </div>
+        </div>
+        <div class="headers">
+        <div class="head-up_length">
+            <div class="head_up">
+                <a href="/">
+                    <img class="head_img" src="{{ url_for('storage', path='/service.png') }}">
+                </a>
+                <div class="head_center">
+                    <div class="head_city">
+                        <div>
+                            Ваш город:
+                        </div>
+                        <select name="dialog__city" id="city" >
+                             {% for city in cities %}
+                            <option value="{{ city.value }}">{{ city.value }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <form class="search-form" method="get" action="/search/">
+                        <input class="search-input" name="query" type="text", placeholder="Поиск по товарам">
+                        <button class="search-button" type="submit"></button>
+                        
+                    </form>
+                    <div class="order">
+                        <div>
+                            <a href="tel:+78007558888">8 (800) 755-88-88</a>
+                        </div>
+                        <a class="order-phone-down">Заказ по телефону</a>
+                    </div>
+                </div>
+                <div class="head-profile">
+                    <a href="/user/login" class="h-profile-cabinet-a">
+                        <img width="55px" height="55px" class="h-profile-cabinet" src="{{ url_for('storage', path='/cabinet.png') }}">
+                    </a>
+                    <a href="/user/favourites" class="h-profile-favorites-a">
+                        <img width="58px" height="58px" class="h-profile-favorites" src="{{ url_for('storage', path='/favourites.png') }}">
+                        <div class="h-profile-favorites-box">
+                            <div class="h-profile-favorites-counter ">
+                                <span id="favourites-number" class="h-profile-favorites-number">0</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="/user/basket" class="h-profile-basket-a">
+                        <img width="55px" height="55px" class="h-profile-basket" src="{{ url_for('storage', path='/basket.png') }}">
+                        <div class="h-profile-basket-label">В корзине пусто</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class='head_down'>
+            <div class="head-down-center">
+                <div class="head-down-show_menu-catalog">
+                    <a href="/catalog" class="head-down-show_menu-a">
+                        <img width="50px" height="45px" class="head-down-show_menu-img" src="{{ url_for('storage', path='/menu-bar.png') }}">
+                        <span class="head-down-show_menu-word">Каталог</span>
+                    </a>
+                    <div class="head-down-catalog-pop_up" id="catalog-pop_up">
+                        <div class="head-down-catalog-pop_up-column">
+                        {% for obj in categories %}
+                        <a href="/catalog/{{ obj.slug }}" class="head-down-catalog-pop_up-a"><span class="head-down-catalog-pop_up-span">{{ obj.name }}</span></a>
+                        {% endfor %}
+                        </div>
+                        <div id="menu-2" class="head-down-show-menu-container">
+                            <div class="menu-2-back-wraper">
+                                <div class="menu-2-category-header">
+                                    <div class="menu-2-category-header-title" id="menu-2-category-name"></div>
+                                    <a href="/" class="menu-2-category-header-link_content" id="menu-2-subcategory-length"></a>
+                                </div>
+                                <div class="menu-2-back-wraper-content" id="back-wraper-content">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="head-down-show_menu-city show-menu">
+                    <a class="head-down-show_menu-a">
+                        <img width="50px" height="45px" class="head-down-show_menu-img" src="{{ url_for('storage', path='/city.png') }}">
+                        <span class="head-down-show_menu-word">О компании</span>
+                    </a>
+                    <div class="head-down-other-pop_up">
+                        <a class="head-down-other-pop_up-a"><span class="head-down-other-pop_up-span">Бренды</span></a>
+                        <a class="head-down-other-pop_up-a"><span class="head-down-other-pop_up-span">Сертификаты</span></a>
+                        <a class="head-down-other-pop_up-a"><span class="head-down-other-pop_up-span">Вакансии</span></a>
+                        <a class="head-down-other-pop_up-a"><span class="head-down-other-pop_up-span">Гарантии</span></a>
+                    </div>
+                </div>
+                <div class="head-down-show_menu-news show-menu">
+                    <a class="head-down-show_menu-a">
+                        <img width="50px" height="45px" class="head-down-show_menu-img" src="{{ url_for('storage', path='/news.png') }}">
+                        <span class="head-down-show_menu-word">Новости</span>
+                    </a>
+                </div>
+                <div class="head-down-show_menu-tool show-menu">
+                    <a class="head-down-show_menu-a">
+                        <img width="50px" height="45px" class="head-down-show_menu-img" src="{{ url_for('storage', path='/tool.png') }}">
+                        <span class="head-down-show_menu-word">Монтаж</span>
+                    </a>
+                </div>
+                <div class="head-down-show_menu-truck show-menu">
+                    <a class="head-down-show_menu-a">
+                        <img width="50px" height="45px" class="head-down-show_menu-img" src="{{ url_for('storage', path='/delivery-truck.png') }}">
+                        <span class="head-down-show_menu-word">Доставка</span>
+                    </a>
+                </div>
+                <div class="head-down-show_menu-market show-menu">
+                    <a class="head-down-show_menu-a" style="border: none;">
+                        <img width="50px" height="45px" class="head-down-show_menu-img" src="{{ url_for('storage', path='/market.png') }}">
+                        <span class="head-down-show_menu-word">Магазины</span>
+                    </a>
+                    <div class="head-down-other-pop_up">
+                        <a class="head-down-other-pop_up-a"><span class="head-down-other-pop_up-span">Магазины</span></a>
+                        <a class="head-down-other-pop_up-a"><span class="head-down-other-pop_up-span">Обратная связь</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+</header>
+{% block section %}
+{% endblock %}
+{% block aside %}
+{% endblock %}
+<div class="footer">
+    <div class="footer-block">
+        <div class="footer-top">
+                <div class="wraper">
+                    <div class="footer-main-block">
+                    <div class="footer-menu-links-desktop">
+                        <div class="desktop-block">
+                            <div class="company-title title-list">Компания</div>
+                            <ul class="desktop-ul">
+                                <li><a href="/">О компании</a></li>
+                                <li><a href="/">Бренды</a></li>
+                                <li><a href="/">Контакты</a></li>
+                                <li><a href="/">Сертификаты</a></li>
+                                <li><a href="/">Гарантии</a></li>
+                                <li><a href="/">Вакансии</a></li>
+                                <li><a href="/">Магазины</a></li>
+                                <li><a href="/">Новости</a></li>
+                            </ul>
+                        </div>
+                        <div class="desktop-block">
+                            <div class="buyer-title title-list">Покупателям</div>
+                            <ul class="desktop-ul">
+                                <li><a href="/">Как оформить заказ</a></li>
+                                <li><a href="/">Способы оплаты</a></li>
+                                <li><a href="/">Кредиты</a></li>
+                                <li><a href="/">Доставка</a></li>
+                                <li><a href="/">Статус заказа</a></li>
+                                <li><a href="/">Обмен, возврат, гарантия</a></li>
+                                <li><a href="/">Монтаж</a></li>
+                                <li><a href="/">Политика обработки персональных данных</a></li>
+                            </ul>
+                        </div>
+                        <div class="desktop-block">
+                            <div class="buyer-title title-list">Сотрудничество</div>
+                            <ul class="desktop-ul">
+                                <li><a href="/">Юридическим лицам</a></li>
+                                <li><a href="/">Физическим лицам</a></li>
+                                <li><a href="/">Отправить коммерческое предложение</a></li>
+                                <li><a href="/">Поставщикам</a></li>
+                                <li><a href="/">Арендатором</a></li>
+                            </ul>
+                        </div>
+                        <div class="desktop-block">
+                            <div class="desktop-messengers-title">Мессенджеры</div>
+                            <div class="desktop-messengers">
+                                <a class="messengers-link" href=""><svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="35" height="35" x="0" y="0" viewBox="0 0 176 176" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><g data-name="Layer 2"><rect width="176" height="176" fill="#1d80c9" rx="24" opacity="1" data-original="#1c8adb" class=""></rect><path fill="#ffffff" d="m135.94 45.5-1.82.66-98.78 35.59a3.31 3.31 0 0 0 .29 6.4l25.57 7 4.77 14 4.77 14a4.54 4.54 0 0 0 7.32 1.63l13.21-12.48 25.94 17.59c3.17 2.16 7.69.56 8.5-3l17.18-75.91c.84-3.76-3.12-6.85-6.95-5.48zm-12.61 16.85L78.7 98.83l-2.1 1.72a2.27 2.27 0 0 0-.84 1.48l-.47 3.88-1.29 10.9a.5.5 0 0 1-1 .08L69.37 106l-3.75-11.15a2.26 2.26 0 0 1 1.08-2.67l46.44-26.62 8.74-5c1.27-.74 2.57.87 1.45 1.79z" opacity="1" data-original="#ffffff" class=""></path></g></g></svg></a>
+                                <a class="messengers-link" href=""><svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="35" height="35" x="0" y="0" viewBox="0 0 176 176" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><g data-name="Layer 2"><rect width="176" height="176" fill="#29a71a" rx="24" opacity="1" data-original="#29a71a" class=""></rect><g fill="#fff"><path d="M126.8 49.2a54.57 54.57 0 0 0-87.42 63.13l-5.79 28.11a2.08 2.08 0 0 0 .33 1.63 2.11 2.11 0 0 0 2.24.87l27.55-6.53A54.56 54.56 0 0 0 126.8 49.2zm-8.59 68.56a42.74 42.74 0 0 1-49.22 8l-3.84-1.9-16.89 4 .05-.21 3.5-17-1.88-3.71a42.72 42.72 0 0 1 7.86-49.59 42.73 42.73 0 0 1 60.42 0 2.28 2.28 0 0 0 .22.22 42.72 42.72 0 0 1-.22 60.19z" fill="#ffffff" opacity="1" data-original="#ffffff" class=""></path><path d="M116.71 105.29c-2.07 3.26-5.34 7.25-9.45 8.24-7.2 1.74-18.25.06-32-12.76l-.17-.15C63 89.41 59.86 80.08 60.62 72.68c.42-4.2 3.92-8 6.87-10.48a3.93 3.93 0 0 1 6.15 1.41l4.45 10a3.91 3.91 0 0 1-.49 4l-2.25 2.92a3.87 3.87 0 0 0-.35 4.32c1.26 2.21 4.28 5.46 7.63 8.47 3.76 3.4 7.93 6.51 10.57 7.57a3.82 3.82 0 0 0 4.19-.88l2.61-2.63a4 4 0 0 1 3.9-1l10.57 3a4 4 0 0 1 2.24 5.91z" fill="#ffffff" opacity="1" data-original="#ffffff" class=""></path></g></g></g></svg></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer-top-contacts-block">
+                    <div class="footer-top-contacts-content">
+                        <div class="contacts-tel contacts">
+                             <a href="tel:+78007558888" class="contacts-tel-link">
+                                8 (800) 755-88-88
+                            </a>
+                            <a class="contacts-tel-link-text">
+                                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="25" height="25" x="0" y="0" viewBox="0 0 682.667 682.667" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g transform="matrix(1,0,0,1,-135,0)"><defs><clipPath id="a" clipPathUnits="userSpaceOnUse"><path d="M0 512h512V0H0Z" fill="#000000" opacity="1" data-original="#000000" class=""></path></clipPath></defs><g clip-path="url(#a)" transform="matrix(1.33333 0 0 -1.33333 0 682.667)"><path d="M0 0v-451.72c0-12.51-10.13-22.64-22.64-22.64h-244.719c-11.271 0-20.611 8.22-22.351 19-.189 1.18-.29 2.4-.29 3.64V0c0 12.51 10.13 22.64 22.641 22.64H-22.64C-10.13 22.64 0 12.51 0 0" style="fill-opacity:1;fill-rule:nonzero;stroke:none" transform="translate(400.998 481.86)" fill="#b3f6ff" data-original="#b3f6ff" class=""></path><path d="M0 0v-451.72c0-12.51-10.13-22.64-22.64-22.64h-244.719c-11.271 0-20.611 8.22-22.351 19h243.07c12.51 0 22.64 10.13 22.64 22.64V0c0 12.51-10.13 22.64-22.64 22.64h24C-10.13 22.64 0 12.51 0 0" style="fill-opacity:1;fill-rule:nonzero;stroke:none" transform="translate(400.998 481.86)" fill="#a0dbf2" data-original="#a0dbf2" class=""></path><path d="M0 0v-12.36C0-24.87-10.13-35-22.64-35h-244.719c-11.271 0-20.611 8.22-22.351 19-.189 1.18-.29 2.4-.29 3.64V0Z" style="fill-opacity:1;fill-rule:nonzero;stroke:none" transform="translate(400.998 42.5)" fill="#616270" data-original="#616270"></path><path d="M0 0v-22.05C0-28.81-5.479-34.3-12.25-34.3h-125.5c-6.77 0-12.25 5.49-12.25 12.25V0Z" style="fill-opacity:1;fill-rule:nonzero;stroke:none" transform="translate(330.998 504.5)" fill="#616270" data-original="#616270"></path><path d="M0 0v-17c0-6.76-5.479-12.25-12.25-12.25h-125.5c-6.77 0-12.25 5.49-12.25 12.25v4.75h137.75C-5.479-12.25 0-6.76 0 0" style="fill-opacity:1;fill-rule:nonzero;stroke:none" transform="translate(330.998 499.45)" fill="#40414c" data-original="#40414c" class=""></path><path d="M0 0v-12.36C0-24.87-10.13-35-22.64-35h-244.719c-11.271 0-20.611 8.22-22.351 19h243.07c10.201 0 18.82 6.74 21.65 16z" style="fill-opacity:1;fill-rule:nonzero;stroke:none" transform="translate(400.998 42.5)" fill="#40414c" data-original="#40414c" class=""></path><path d="m0 0-7.1-11.84-2.51-4.19a19.616 19.616 0 0 0-11.51-8.9c-15.99-4.38-51.24-5.27-107.75 51.24-56.5 56.51-55.62 91.76-51.24 107.75 1.38 4.83 4.56 8.96 8.9 11.51l4.6 2.76 11.43 6.86a7.998 7.998 0 0 0 10.76-2.43l25.55-38.33a7.987 7.987 0 0 0-1.74-10.73l-11.52-8.34a7.95 7.95 0 0 1-2.11-10.15c4.219-7.57 8.21-16.51 27.969-36.3C-86.5 29.12-77.54 25.16-69.97 20.94a7.95 7.95 0 0 1 10.15 2.11l8.34 11.52a7.986 7.986 0 0 0 10.73 1.74l38.33-25.55A7.985 7.985 0 0 0 0 0" style="fill-opacity:1;fill-rule:nonzero;stroke:none" transform="translate(341.66 187.476)" fill="#51e08b" data-original="#51e08b" class=""></path><path d="m0 0-7.1-11.84c-15.98-4.38-50.74-4.82-107.24 51.69-56.511 56.51-56.65 92.5-52.27 108.48l11.43 6.86a7.998 7.998 0 0 0 10.76-2.43l25.55-38.33a7.987 7.987 0 0 0-1.74-10.73l-11.52-8.34a7.95 7.95 0 0 1-2.11-10.15c4.219-7.57 8.21-16.51 27.969-36.3C-86.5 29.12-77.54 25.16-69.97 20.94a7.95 7.95 0 0 1 10.15 2.11l8.34 11.52a7.986 7.986 0 0 0 10.73 1.74l38.33-25.55A7.985 7.985 0 0 0 0 0" style="fill-opacity:1;fill-rule:nonzero;stroke:none" transform="translate(341.66 187.476)" fill="#1bc18a" data-original="#1bc18a" class=""></path><path d="M0 0a4.753 4.753 0 0 0-4.748-4.748h-125.504A4.753 4.753 0 0 0-135 0v14.55H0Zm77.5-30.005a7.5 7.5 0 0 1 7.5 7.5V-.586C85 16.031 71.48 29.55 54.863 29.55h-244.726C-206.48 29.55-220 16.031-220-.586v-451.727c0-16.618 13.52-30.137 30.137-30.137H54.863C71.48-482.45 85-468.931 85-452.313v394.775a7.5 7.5 0 0 1-7.5 7.5 7.5 7.5 0 0 1-7.5-7.5V-432.45h-194.94a7.5 7.5 0 0 1-7.5-7.5 7.5 7.5 0 0 1 7.5-7.5H70v-4.863c0-8.347-6.79-15.137-15.137-15.137h-244.726c-8.347 0-15.137 6.79-15.137 15.137v4.863h45.462a7.5 7.5 0 0 1 0 15H-205V-.586c0 8.346 6.79 15.136 15.137 15.136H-150V0c0-10.889 8.859-19.748 19.748-19.748H-4.748C6.141-19.748 15-10.889 15 0v14.55h39.863C63.21 14.55 70 7.76 70-.586v-21.919a7.5 7.5 0 0 1 7.5-7.5" style="fill-opacity:1;fill-rule:nonzero;stroke:none" transform="translate(323.502 482.45)" fill="#000000" data-original="#000000" class=""></path><path d="M0 0c.363-.654.726-1.319 1.098-2.001 4.165-7.644 9.349-17.155 28.12-35.95C47.946-56.704 57.47-61.886 65.121-66.05a238.2 238.2 0 0 0 2.067-1.133c6.736-3.729 15.032-2.008 19.727 4.091l.134.179 8.21 11.35c.163.167.426.2.62.072l38.336-25.557v.001a.49.49 0 0 0 .148-.661l-9.648-16.084c-1.581-2.684-4.103-4.633-7.032-5.467-34.923-9.581-77.93 26.78-100.457 49.306-22.528 22.527-58.889 65.534-49.33 100.391.854 2.999 2.803 5.521 5.54 7.133l16.029 9.617a.49.49 0 0 0 .663-.149l25.553-38.331a.494.494 0 0 0-.068-.625l-11.349-8.21a5.998 5.998 0 0 1-.18-.134C-2.016 15.042-3.736 6.747 0 0m24.577 16.055c.072.051.144.105.213.159 6.359 4.954 7.844 14.092 3.375 20.809L2.608 75.36a15.475 15.475 0 0 1-20.858 4.692l-15.98-9.588c-6.019-3.546-10.387-9.199-12.319-15.988C-52.624 32.327-48.331-5.609 6.618-60.56c43.476-43.475 76.298-55.238 99.114-55.238 6.022 0 11.349.82 15.989 2.093 6.72 1.913 12.374 6.282 15.888 12.249l9.618 16.031a15.475 15.475 0 0 1-4.691 20.858h-.001l-38.343 25.561c-6.709 4.462-15.846 2.98-20.801-3.378a11.86 11.86 0 0 1-.161-.213l-8.229-11.378a.445.445 0 0 0-.534-.092c-.711.395-1.434.789-2.176 1.192-6.802 3.702-15.267 8.308-32.46 25.524C22.585-10.083 17.974-1.622 14.269 5.177c-.393.72-.776 1.423-1.154 2.102a.45.45 0 0 0 .086.547Z" style="fill-opacity:1;fill-rule:nonzero;stroke:none" transform="translate(200.866 269.04)" fill="#000000" data-original="#000000" class=""></path><path d="M0 0a7.5 7.5 0 0 1 7.5-7.5A7.5 7.5 0 0 1 15 0c0 34.871-28.369 63.24-63.24 63.24a7.5 7.5 0 0 1-7.5-7.5 7.5 7.5 0 0 1 7.5-7.5C-21.641 48.24 0 26.6 0 0" style="fill-opacity:1;fill-rule:nonzero;stroke:none" transform="translate(299.508 252.266)" fill="#000000" data-original="#000000" class=""></path><path d="M0 0c0 59.827-48.673 108.5-108.5 108.5a7.5 7.5 0 0 1-7.5-7.5 7.5 7.5 0 0 1 7.5-7.5C-56.944 93.5-15 51.556-15 0a7.5 7.5 0 0 1 7.5-7.5A7.5 7.5 0 0 1 0 0" style="fill-opacity:1;fill-rule:nonzero;stroke:none" transform="translate(359.768 252.266)" fill="#000000" data-original="#000000" class=""></path></g></g></svg>
+                                <span>Заказ по телефону</span>
+                            </a>
+                        </div>
+                        <div class="contacts-email contacts">
+                            <a class="contacts-email-link_title">
+                                Наш email
+                            </a>
+                            <a href="https://mail.yandex.ru/compose?mailto=str42@str42.ru&subject=Hello&body=Text" class="contacts-email-link_text">
+                                <svg class="svg-email" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="25" height="25" x="0" y="0" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><path d="M64 64h384v384H64z" style="" fill="#eceff1" data-original="#eceff1" class=""></path><path d="M256 296.384 448 448V148.672z" style="" fill="#cfd8dc" data-original="#cfd8dc"></path><path d="M464 64h-16L256 215.616 64 64H48C21.504 64 0 85.504 0 112v288c0 26.496 21.504 48 48 48h16V148.672l192 147.68L448 148.64V448h16c26.496 0 48-21.504 48-48V112c0-26.496-21.504-48-48-48z" style="" fill="#f44336" data-original="#f44336"></path></g></svg>
+                                str42@str42.ru
+                            </a>
+                        </div>
+                        <div class="contacts-time contacts">
+                            <a class="">
+                                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="25" height="25" x="0" y="0" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><circle cx="256" cy="256" r="256" fill="#6aa9ff" opacity="1" data-original="#6aa9ff" class=""></circle><path fill="#4895ff" d="M512 256C512 115.39 396.61 0 256 0v512c140.61 0 256-115.39 256-256z" opacity="1" data-original="#4895ff" class=""></path><circle cx="256" cy="256" r="226" fill="#edf5ff" opacity="1" data-original="#edf5ff" class=""></circle><path fill="#d5e8fe" d="M482 256c0-124.072-101.928-226-226-226v452c124.072 0 226-101.928 226-226z" opacity="1" data-original="#d5e8fe" class=""></path><circle cx="128.721" cy="383.279" r="15" fill="#47568c" opacity="1" data-original="#47568c"></circle><circle cx="383.279" cy="128.721" r="15" fill="#29376d" opacity="1" data-original="#29376d" class=""></circle><circle cx="128.721" cy="128.721" r="15" fill="#47568c" opacity="1" data-original="#47568c"></circle><circle cx="383.279" cy="383.279" r="15" fill="#29376d" opacity="1" data-original="#29376d" class=""></circle><path fill="#47568c" d="M106 271H76c-8.291 0-15-6.709-15-15s6.709-15 15-15h30c8.291 0 15 6.709 15 15s-6.709 15-15 15z" opacity="1" data-original="#47568c"></path><path fill="#29376d" d="M436 271h-30c-8.291 0-15-6.709-15-15s6.709-15 15-15h30c8.291 0 15 6.709 15 15s-6.709 15-15 15z" opacity="1" data-original="#29376d" class=""></path><path fill="#47568c" d="M241 76v30c0 8.291 6.709 15 15 15V61c-8.291 0-15 6.709-15 15z" opacity="1" data-original="#47568c"></path><path fill="#ff7b4a" d="M271 106V76c0-8.291-6.709-15-15-15v60c8.291 0 15-6.709 15-15z" opacity="1" data-original="#ff7b4a"></path><path fill="#47568c" d="M256 391c-8.291 0-15 6.709-15 15v30c0 8.291 6.709 15 15 15s15-6.709 15-15v-30c0-8.291-6.709-15-15-15zM356.605 335.395 271 249.789V166c0-8.291-6.709-15-15-15s-15 6.709-15 15v90c0 3.984 1.582 7.793 4.395 10.605L256 277.211l79.395 79.395c5.859 5.859 15.352 5.859 21.211 0s5.859-15.352-.001-21.211z" opacity="1" data-original="#47568c"></path><g fill="#29376d"><path d="M271 106V76c0-8.291-6.709-15-15-15v60c8.291 0 15-6.709 15-15zM271 436v-30c0-8.291-6.709-15-15-15v60c8.291 0 15-6.709 15-15zM356.605 356.605c5.859-5.859 5.859-15.352 0-21.211L271 249.789V166c0-8.291-6.709-15-15-15v126.211l79.395 79.395c5.859 5.859 15.351 5.859 21.21-.001z" fill="#29376d" opacity="1" data-original="#29376d" class=""></path></g></g></svg>
+                                <span>Информация о ценах и наличии товара обновлена по Кемеровскому времени:<span class="time-text"> {{ now }}</span></span>
+                            </a>
+                        </div>
+                    </div>
+                    </div>
+                    </div>
+                </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="wraper">
+                <div class="footer-bottom-block">
+                    <div class="footer-copyright">
+                        <p>Если у товара отсутствует цена, это означает что он либо временно закончился, либо зарезервирован, либо больше не производится. Возможность поставки и стоимость такого товара уточняйте у менеджеров по телефону или с помощью формы обратной связи.</p>
+                        <p>Любая информация на сайте носит информационный характер и ни при каких условиях не является публичной офертой, определяемой положениями Статьи 437 (2) Гражданского кодекса РФ. Информация о товарах, их технических свойствах и характеристиках, ценах является предложением СанТехРесурса делать оферты. Информация о технических характеристиках товаров, указанная на сайте, может быть изменена производителем в одностороннем порядке. Изображения товаров на фотографиях, представленных в каталоге на сайте, могут отличаться от оригиналов. Информация о цене товара, указанная в каталоге на сайте, может отличаться от фактической к моменту оформления заказа на соответствующий товар. Подтверждением цены заказанного товара является сообщение СанТехРесурса о цене такого товара.</p>
+                    </div>
+                    <div class="footer-content-bottom">
+                        <div class="footer-payments">
+                            <div class="payments-title">Система оплаты</div>
+                            <div class="payments-svg">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="50" height="50"><path fill="#ff5f00" d="M15.245 17.831h-6.49V6.168h6.49v11.663z" class="colorFF5F00 svgShape"></path><path fill="#eb001b" d="M9.167 12A7.404 7.404 0 0 1 12 6.169 7.417 7.417 0 0 0 0 12a7.417 7.417 0 0 0 11.999 5.831A7.406 7.406 0 0 1 9.167 12z" class="colorEB001B svgShape"></path><path fill="#f79e1b" d="M24 12a7.417 7.417 0 0 1-12 5.831c1.725-1.358 2.833-3.465 2.833-5.831S13.725 7.527 12 6.169A7.417 7.417 0 0 1 24 12z" class="colorF79E1B svgShape"></path></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="50" height="50"><path fill="#191e6e" d="M13.967 13.837c-.766 0-1.186-.105-1.831-.37l-.239-.109-.271 1.575c.466.192 1.306.357 2.175.37 2.041 0 3.375-.947 3.391-2.404.016-.801-.51-1.409-1.621-1.91-.674-.325-1.094-.543-1.094-.873 0-.292.359-.603 1.109-.603a3.602 3.602 0 0 1 1.455.269l.18.08.271-1.522-.047.01a5.053 5.053 0 0 0-1.74-.297c-1.92 0-3.275.954-3.285 2.321-.012 1.005.964 1.571 1.701 1.908.757.345 1.01.562 1.008.872-.005.471-.605.683-1.162.683zm8.461-5.655h-1.5c-.467 0-.816.125-1.021.583l-2.885 6.44h2.041l.408-1.054 2.49.002c.061.246.24 1.052.24 1.052H24l-1.572-7.023zM20.03 12.71l.774-1.963c-.01.02.16-.406.258-.67l.133.606.449 2.027H20.03zM8.444 15.149h1.944l1.215-7.026H9.66v-.002zM4.923 12.971l-.202-.976v.003l-.682-3.226c-.117-.447-.459-.579-.883-.595H.025L0 8.325c.705.165 1.34.404 1.908.697a.392.392 0 0 1 .18.234l1.68 5.939h2.054l3.061-7.013H6.824l-1.901 4.789z" class="color191E6E svgShape"></path></svg>
+                            </div>
+                        </div>
+                        <a href="/"><img src="/storage/logo-small.jpg"></a>
+                    </div>
+                </div>
+            </div>
+        </div> 
+    </div>
+</div>
+
+{% block script %}
+{% endblock %}
+<script src="{{ url_for('storage', path='js/components/menu-2-back-wraper.js') }}" type="module"></script>
+<script src="{{ url_for('storage', path='js/base.js') }}" type="module"></script>
+</html>

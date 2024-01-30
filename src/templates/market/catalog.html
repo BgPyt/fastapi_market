@@ -1,0 +1,42 @@
+{% extends 'headers.html' %}
+{% block title %} Каталог товаров в Кемерово - продажа в розницу и оптом по выгодным ценам в регионе. Сантехресурс - крупнейший интернет-магазин сантехники, плитки, строительных материалов и товаров для водоснабжения и отопления. Наш телефон 8-800-745-8882. {% endblock %}
+{% block link %}
+<link rel="stylesheet" href="{{ url_for('storage', path='css/catalog.css') }}">
+{% endblock %}
+{% block section %}
+<div class="content">
+    <div class="content-block-navigation">
+        <div class="wraper">
+            <div class="navigation-block">
+                <div class="navigation-path">
+                    <ul class="navigation-list">
+                        <li name="main-page"><a href="/"><span>Главная</span></a></li>
+                        <li><a><span>Каталог</span></a></li>
+                    </ul>
+                </div>
+                <div class="navigation-name">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="content-category">
+        <div class="wraper">
+            <div class="block-category">
+                {% for item in category %}
+                <a href="/catalog/{{ item.slug }}">
+                <div class="category-item">
+                    <img class="category-item_img" src="storage/category/{{ item.slug }}.jpg">
+                    <div class="category-block-span">
+                        <span> {{ item.name }}</span>
+                    </div>
+                </div>
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+        
+
+    </div>
+</div>
+{% endblock %}

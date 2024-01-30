@@ -1,0 +1,170 @@
+.footer {
+    font-size: 11px;
+}
+
+.wraper {
+    padding-right: 24px;
+    align-items: center;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 24px;
+    position: relative;
+    max-width: 1330px;
+    display: flex;
+}
+
+
+.footer_block {
+}
+
+.footer_top {
+    background-color: #0099f5;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.footer_main_block {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer_top_contacts_content {
+    font-size: 1rem;
+    font-family: "Oswald",  sans-serif;
+    font-weight: 700;
+    display: flex;
+    flex-direction: row;
+}
+
+.footer_top_contacts_block {
+    display: flex;
+    width: 100%;
+}
+.contacts {
+    margin-right: 75px;
+}
+
+.contacts_tel_link {
+    color: white;
+}
+
+.contacts_email_link_title {
+    color: white;
+}
+
+.contacts_tel_link_text {
+    position: relative;
+    display: flex;
+    color: black
+}
+
+.contacts_email_link_text {
+    position: relative;
+    display: flex;
+    color: black;
+
+}
+
+.svg_phone {
+    /* position: absolute;
+    left: -20px; */
+}
+
+.svg_email {
+    margin-right: 9px;
+}
+
+.desktop_ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.desktop_messengers_title {
+    color: white;
+}
+
+.footer_menu_links_desktop {
+    font-size: 1rem;
+    font-family: "Roboto slab", serif;
+    font-weight: 1200;
+    color: #004995;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.desktop_ul > li > a {
+    color: #004995;
+    transition: 0.5s;
+}
+
+.desktop_ul > li > a:hover {
+    color: #ffd01a;
+}
+
+.title_list {
+    color: white;
+    border-bottom: #cccccc85 1px solid;
+    padding-bottom: 15px;
+}
+
+.desktop_ul > li {
+    margin-top: 10px;
+}
+
+.desktop_block {
+    margin-right: 100px;
+}
+
+.contacts_time {
+    align-self: end;
+}
+
+.time_text {
+    color: white;
+    padding-left: 10px;
+}
+
+.desktop_messengers {
+    display: flex;
+    margin-top: 10px;
+}
+
+.messengers_link {
+    display: flex;
+    margin-right: 15px;
+}
+
+.footer_bottom {
+    background-color: white;
+}
+
+.footer_content_bottom {
+    display: flex;
+}
+
+.footer_payments {
+    display: flex;
+    flex-direction: column;
+    font-size: 1rem;
+    font-family: "Roboto slab", serif;
+    font-weight: 1200;
+}
+
+.footer_content_bottom > a {
+    margin-left: auto;
+}
+
+.payments_svg {
+    align-self: center;
+}
+
+.footer_copyright {
+    font-size: 14px;
+    font-family: "Roboto slab", serif;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.507);
+    margin-bottom: 5px;
+}

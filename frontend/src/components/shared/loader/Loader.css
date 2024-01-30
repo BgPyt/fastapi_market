@@ -1,0 +1,25 @@
+.block_loader {
+    /* position: fixed; */
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    bottom: 0;
+    right: 0; 
+    left: 0;
+    z-index: 999;
+}
+
+.loader {
+    animation: 1s spin infinite linear;
+}
+
+@keyframes spin {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg)
+    }
+    to {
+        transform: translate(-50%, -50%) rotate(360deg)
+    }
+    
+}

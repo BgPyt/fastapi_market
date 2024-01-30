@@ -1,0 +1,45 @@
+{% extends 'headers.html' %}
+{% block title %} Избранное {% endblock %}
+{% block link %}
+<link rel="stylesheet" href="{{ url_for('storage', path='css/user/favourites.css') }}">
+{% endblock %}
+{% block section %}
+<div class="content">
+    <div class="content-block-navigation">
+        <div class="wraper">
+            <div class="navigation-block">
+                <div class="navigation-path">
+                    <ul class="navigation-list">
+                        <li name="main-page"><a href="/"><span>Главная</span></a></li>
+                        <li><a href="/user"><span>Кабинет</span></a></li>
+                        <li><a href="/user/favourites"><span>Избранное</span></a></li>
+                    </ul>
+                </div>
+                <div class="navigation-name">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="content-product-table">
+        <div class="wrapper">
+            <div class="product-table-block">
+                <div class="table-head">
+                    <div class="table-head-article">Код</div>
+                    <div class="table-head-name">Название</div>
+                    <div class="table-head-availability">Наличие</div>
+                    <div class="table-head-price">Цена</div>
+                    <div class="table-head-button"><div class="clear-all_favoruties"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="30" height="30" x="0" y="0" viewBox="0 0 24 24" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><path d="M4 7v12a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a1 1 0 0 0 0-2h-4V4a3 3 0 0 0-3-3h-2a3 3 0 0 0-3 3v1H4a1 1 0 0 0 0 2zm6-3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v1h-4zM6 7h12v12a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1z" fill="white" opacity="1" data-original="#000000" class=""></path><path d="M9 18a1 1 0 0 0 1-1v-7a1 1 0 0 0-2 0v7a1 1 0 0 0 1 1zM15 18a1 1 0 0 0 1-1v-7a1 1 0 0 0-2 0v7a1 1 0 0 0 1 1z" fill="white" opacity="1" data-original="#000000" class=""></path></g></svg>
+                        Очистить всё
+                        </div>
+                    </div>
+                </div>
+                <div class="catalog-show-product-block">
+                </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block script %}
+<script src="{{ url_for('storage', path='js/components/add-favourites_or_basket.js') }}" type="module"></script>
+<script src="{{ url_for('storage', path='js/components/favourites.js') }}"></script>
+{% endblock %}

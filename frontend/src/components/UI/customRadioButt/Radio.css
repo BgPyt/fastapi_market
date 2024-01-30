@@ -1,0 +1,33 @@
+
+.block_show_items {
+    display: flex;
+}
+
+.form_radio_btn {
+    margin-right: 10px;
+}
+
+.form_radio_btn input[type=radio] {
+    display: none;
+
+}
+
+.form_radio_btn label {
+	display: inline-block;
+	cursor: pointer;
+	padding: 0px 10px;
+	border: 1px solid #999;
+	border-radius: 6px;
+	user-select: none;
+}
+
+
+.form_radio_btn input[type=radio]:checked + label {
+	background: #016fe1;
+}
+
+.form_radio_btn input[type=radio]:disabled + label {
+	background: #efefef;
+	color: #666;
+}
+

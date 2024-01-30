@@ -1,0 +1,48 @@
+{% extends 'headers.html' %}
+{% block title %} Корзина {% endblock %}
+{% block link %}
+<link rel="stylesheet" href="{{ url_for('storage', path='css/user/basket.css') }}">
+{% endblock %}
+{% block section %}
+<div class="content-block-navigation">
+    <div class="wraper">
+        <div class="navigation-block">
+            <div class="navigation-path">
+                <ul class="navigation-list">
+                    <li name="main-page"><a href="/"><span>Главная</span></a></li>
+                    <li><a href="/user"><span>Кабинет</span></a></li>
+                    <li><a href="/user/basket"><span>Корзина</span></a></li>
+                </ul>
+            </div>
+            <div class="navigation-name">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="main-basket">
+    <div class="wraper">
+        <div class="content-basket">
+            <div class="basket-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th class="basket-table-header-description basket-table-header">Описание</th>
+                            <th class="basket-table-header-availability basket-table-header">Наличие</th>
+                            <th class="basket-table-header-quantity basket-table-header">Кол-во</th>
+                            <th class="basket-table-header-price basket-table-header">Цена, ₽</th>
+                            <th class="basket-table-header-amount basket-table-header">Сумма, ₽</th>
+                        </tr>
+                    </thead>
+                    <tbody class="catalog-show-product-block">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block script %}
+<script src="{{ url_for('storage', path='js/components/add-favourites_or_basket.js') }}" type="module"></script>
+<script src="{{ url_for('storage', path='js/components/ajax_basket.js') }}" type="module"></script>
+{% endblock %}

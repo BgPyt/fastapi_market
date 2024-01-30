@@ -1,0 +1,60 @@
+.select {
+    max-width: 215px;
+    width: 187px;
+    position: relative;
+    display: block;
+    font-family: "Roboto slab", serif;
+    font-size: 1rem;
+}
+
+.select_active {
+    position: relative;
+    border: 1px solid #ced4da;
+    padding: 10px 15px;
+    cursor: pointer;
+    user-select: none;
+    text-align: center;
+}
+
+.select_list {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 45px;
+    left: 0;
+    border: 1px solid #ced4da;
+    cursor: pointer;
+    width: 185px;
+    z-index: 1;
+    background: #fff;
+    animation: options_open 300ms ease-in-out forwards;
+    overflow: hidden;
+    transform-origin: top center;
+}
+
+.select_item {
+    text-align: center;
+    border-bottom: rgb(129, 129, 129) solid 1px;
+    height: 20px;
+    position: relative;
+}
+
+.select_item:hover {
+    background-color: #0099f5;
+    transition: 0.3s;
+}
+
+.select_item:last-child {
+    border: none;
+}
+
+@keyframes options_open {
+    0% {
+        opacity: 0;
+        transform: translateY(2rem);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }

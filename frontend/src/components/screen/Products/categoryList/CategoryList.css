@@ -1,0 +1,30 @@
+.categorylist {
+    width: 262px;
+    font-family: 'Roboto Slab', serif;
+    box-shadow: 2px 2px 12px 1px rgba(59, 59, 59, 0.459);
+    height: 350px;
+    overflow: scroll;
+    scrollbar-width: 10px;
+    scrollbar-color: #6969dd #e0e0e0;
+}
+
+.categorylist > div {
+    text-align: center;
+}
+
+.categorylist > ul {
+    list-style-type: none;
+    padding-left: 5px;
+}
+
+.categorylist ul > li {
+    padding-bottom: 5px;
+}
+
+.categorylist ul > li  a {
+    transition: 0.6s;
+}
+
+.categorylist ul > li > a:hover {
+    color: #0099f5;
+} 

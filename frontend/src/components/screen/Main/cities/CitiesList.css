@@ -1,0 +1,35 @@
+.list-market {
+    margin-left: 30px;
+}
+
+.main-market {
+    font-family: 'Roboto Condensed',sans-serif;
+    color: #b21a0d;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.484;
+}
+
+.description-makret {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 700;
+    font-size: calc(9px + 1vw);
+}
+
+.list-market-column-branches {
+    font-weight: 400;
+    font-size: 16px;
+    overflow: scroll;
+    height: 70%;
+    white-space: nowrap;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+
+.info-market {
+    margin-top: 15px;
+}
+
+.phone {
+    color: #bb1d1d;
+}

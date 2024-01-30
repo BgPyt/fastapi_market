@@ -1,0 +1,79 @@
+.slider {
+    width: 670px;
+    height: 170px;
+    display: flex;
+    flex-direction: column-reverse;
+    overflow: hidden;
+
+}
+
+.slider-line {
+    height: 100%;
+    width: 100%;
+    background: orangered;
+    display: flex;
+    position: relative;
+    z-index: auto;
+    transition-duration: 350ms;
+    transform: translateX(0px);
+}
+
+.input-slider {
+    z-index: 1;
+    display: flex;
+    left: 35%;
+    position: absolute;
+}
+
+.input-decoration {
+    text-decoration: none;
+    height: 12px;
+    width: 12px;
+    background: #ffffff;
+    border: 2px black solid;
+    border-radius: 14px;
+    margin-right: 20px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.25);
+    -moz-box-shadow: inset 0 0 6px rgba(0,0,0,0.25);
+    box-shadow: inset 0 0 6px rgba(0,0,0,0.25);
+    display: inline-block;
+    cursor: pointer;
+}
+
+.input-decoration-a {
+    text-decoration: none;
+    display: table-cell;
+    border-radius: 14px;
+    text-indent: -9999px;
+    margin: 2px;
+    cursor: pointer;
+    height: 12px;
+    width: 12px;
+}
+
+
+.input-decoration-a:visited .input-decoration {
+    background: wheat;
+}
+
+.slider-ul-switching {
+    list-style-type: none;
+    margin: 0px;
+    margin-bottom: 0px;
+    padding: 0px;
+    display: inline-flex;
+}
+
+.container {
+    position: relative;
+}
+
+li#null_radio {
+    background: red;
+}
+
+.slider-img {
+    position: relative;
+    transition-property: transform;
+   
+}
